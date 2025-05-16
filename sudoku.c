@@ -117,14 +117,14 @@ int is_final(Node* n){
 Node* DFS(Node* initial, int* cont){
     Stack* stack = createStack();
     push(stack, initial);
-    while (!isEmpty(stack)) {
+    while (!is_empty(stack)) {
         Node* current = pop(stack);
         (*cont)++;
         if (is_final(current)) {
             return current;
         }
         List* adj = get_adj_nodes(current);
-        for (Node* adjNode = firstList(adj); adjNode != NULL; adjNode = nextList(adj)) {
+        for (Node* adjNode = first(adj); adjNode != NULL; adjNode = next(adj)) {
             push(stack, adjNode);
         }
     }
