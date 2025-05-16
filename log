@@ -23,3 +23,34 @@ vi., 16 de may. de 2025 20:00:01:
  tests:  7|1
 total_score: 55/70
 618ebee
+vi., 16 de may. de 2025 20:15:22: 
+ sudoku.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:120:13: warning: implicit declaration of function 'isEmpty'; did you mean 'is_empty'? [-Wimplicit-function-declaration]
+  120 |     while (!isEmpty(stack)) {
+      |             ^~~~~~~
+      |             is_empty
+sudoku.c:121:25: error: void value not ignored as it ought to be
+  121 |         Node* current = pop(stack);
+      |                         ^~~
+sudoku.c:127:30: warning: implicit declaration of function 'firstList' [-Wimplicit-function-declaration]
+  127 |         for (Node* adjNode = firstList(adj); adjNode != NULL; adjNode = nextList(adj)) {
+      |                              ^~~~~~~~~
+sudoku.c:127:30: warning: initialization of 'Node *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+sudoku.c:127:9: error: declaration of non-variable 'firstList' in 'for' loop initial declaration
+  127 |         for (Node* adjNode = firstList(adj); adjNode != NULL; adjNode = nextList(adj)) {
+      |         ^~~
+sudoku.c:127:73: warning: implicit declaration of function 'nextList' [-Wimplicit-function-declaration]
+  127 |         for (Node* adjNode = firstList(adj); adjNode != NULL; adjNode = nextList(adj)) {
+      |                                                                         ^~~~~~~~
+sudoku.c:127:71: warning: assignment to 'Node *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  127 |         for (Node* adjNode = firstList(adj); adjNode != NULL; adjNode = nextList(adj)) {
+      |                                                                       ^
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+34c6f79
